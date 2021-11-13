@@ -17,11 +17,12 @@ exports.getIndex = (req, res) => {
 
 exports.postData = (req, res) => {
   try {
-    const streams = streamDataMaker(req.body);
-    intervalMaker(streams);
+    const { streams, shiftedStreams } = streamDataMaker(req.body);
+    console.log(shiftedStreams);
+
+    // const intervals = intervalMaker(shiftedStreams);
 
     res.send(streams);
-    //res.redirect("/");
   } catch (e) {
     res.render("error", {
       docTitle: "Ошибка",
