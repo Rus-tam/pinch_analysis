@@ -31,6 +31,7 @@ const streamDataMaker = data => {
         massFlow: parseFloat(massFlow[i]),
         heatConductivity: parseFloat(heatConductivity[i]),
         flowHeatCapacity: parseFloat(massFlow[i]) * parseFloat(heatConductivity[i]),
+        deltaT: parseFloat(deltaT),
       });
     } else {
       shiftedStreams.push({
@@ -41,6 +42,7 @@ const streamDataMaker = data => {
         massFlow: parseFloat(massFlow[i]),
         heatConductivity: parseFloat(heatConductivity[i]),
         flowHeatCapacity: parseFloat(massFlow[i]) * parseFloat(heatConductivity[i]),
+        deltaT: parseFloat(deltaT),
       });
     }
   }
