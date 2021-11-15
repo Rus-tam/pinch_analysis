@@ -14,14 +14,11 @@ const pinchPointFinder = (intervals, streams) => {
   let coldFlowHeatCap = 0;
   for (let i = 0; i < intervals.length; i++) {
     for (let j = 0; j < streams.length; j++) {
-      if (streams[j].streamType === 'hotStream') {
-        if (intervals[i].start > streams[j].Tin && intervals[i].end < streams[j].Tout) {
-          streamsIds.push(streams[j].id);
+      if (intervals[i].start > streams[j].Tin && intervals[i].end < streams[j].Tout) {
+        streamsIds.push(streams[j].id);
+        if (streams[j].streamType === 'hotStream') {
           hotFlowHeatCap += streams[j].flowHeatCapacity;
-        }
-      } else if (streams[j].streamType === 'coldStream') {
-        if (intervals[i].start > streams[j].Tin && intervals[i].end < streams[j].Tout) {
-          streamsIds.push(streams[j].id);
+        } else if (streams[j].streamType === 'coldStream') {
           coldFlowHeatCap += streams[j].flowHeatCapacity;
         }
       }
