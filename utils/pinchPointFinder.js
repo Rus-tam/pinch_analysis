@@ -17,6 +17,8 @@ const pinchPointFinder = (intervals, streams) => {
   let pinchPoint = 0;
   let hotPinchPoint = 0;
   let coldPinchPoint = 0;
+  let hotUtilities = 0;
+  let coldUtilities = 0;
   for (let i = 0; i < intervals.length; i++) {
     for (let j = 0; j < streams.length; j++) {
       if (intervals[i].start > streams[j].Tin && intervals[i].end < streams[j].Tout) {
@@ -65,7 +67,10 @@ const pinchPointFinder = (intervals, streams) => {
       }
     }
   }
+  hotUtilities = intervals[0].incomingHeat;
+  coldUtilities = intervals[intervals.length - 1].outgoingHeat;
+  console.log(intervals);
 
-  return { hotPinchPoint, coldPinchPoint };
+  return { hotPinchPoint, coldPinchPoint, hotUtilities, coldUtilities };
 };
 module.exports = pinchPointFinder;
