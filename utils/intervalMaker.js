@@ -1,9 +1,9 @@
-const intervalMaker = (streams) => {
+const intervalMaker = streams => {
   let allTemp = [];
   let intervals = [];
-  streams.forEach((elem) => {
-    allTemp.push(parseFloat(elem.Tin));
-    allTemp.push(parseFloat(elem.Tout));
+  streams.forEach(elem => {
+    allTemp.push(elem.Tin);
+    allTemp.push(elem.Tout);
   });
 
   //Bubble Sort
@@ -19,8 +19,10 @@ const intervalMaker = (streams) => {
 
   for (let i = 0; i < allTemp.length - 1; i++) {
     intervals.push({
+      id: i,
       start: allTemp[i],
       end: allTemp[i + 1],
+      deltaT: allTemp[i] - allTemp[i + 1],
     });
   }
 
