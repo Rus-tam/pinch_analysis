@@ -36,4 +36,4 @@ $ npm run test:cov
 
 ## Авторы
 
-- Авторы - [Ахметов Рустам](ahmetov.rustam2011@gmail.com), [Сафутдинова Ульяна](ulianasafutdinova@yandex.ru)
+- Авторы - [Ахметов Рустам](ahmetov.rustam2011@gmail.com), [Валитова Диана](v25diana@mail.ru )
